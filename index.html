@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kitchen | Cooking Guide</title>
+    <meta name="description" content="A friendly rule-based chatbot for everyday cooking questions." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Application navigation">
+        <a class="brand" href="#top" aria-label="Orbit home">
+          <span class="brand-mark"><i></i><b></b></span>
+          <span>KITCHEN</span>
+        </a>
+
+        <div class="topic-card">
+          <p class="eyebrow">TODAY'S TOPIC</p>
+          <div class="topic-art" aria-hidden="true"><span></span><i></i><b></b></div>
+          <h2>Everyday cooking</h2>
+          <p>Ask about recipes, techniques, ingredients, and kitchen basics.</p>
+        </div>
+
+        <nav class="nav-links">
+          <a class="active" href="#chat"><span>&#10022;</span> Conversation</a>
+          <a href="#facts"><span>&#8984;</span> Kitchen notes</a>
+          <a href="#about"><span>&#9675;</span> About Kitchen</a>
+        </nav>
+        <p class="sidebar-note">A rule-based cooking assistant<br />made for curious cooks.</p>
+      </aside>
+
+      <section class="chat-panel" id="chat">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">EVERYDAY COOKING ASSISTANT</p>
+            <h1>How can I help?</h1>
+          </div>
+          <div class="header-tools">
+            <label class="sr-only" for="topic-filter">Choose a topic</label>
+            <select class="topic-select" id="topic-filter">
+              <option value="all">All topics</option>
+              <option value="recipes">Recipes</option>
+              <option value="techniques">Techniques</option>
+              <option value="ingredients">Ingredients</option>
+            </select>
+            <button class="icon-button" id="clear-chat" type="button" aria-label="Clear conversation" title="Clear conversation">&#8635;</button>
+          </div>
+        </header>
+
+        <div class="conversation" id="conversation" aria-live="polite">
+          <article class="message bot-message">
+            <div class="avatar">K</div>
+            <div class="bubble">
+              <p>Hi, I'm Kitchen. I can help with recipes, cooking methods, ingredient swaps, and kitchen basics.</p>
+              <span class="message-meta">KITCHEN / NOW</span>
+            </div>
+          </article>
+        </div>
+
+        <section class="suggestions" aria-labelledby="suggestion-title">
+          <p id="suggestion-title" class="eyebrow">TRY A QUESTION</p>
+          <div class="suggestion-grid">
+            <button type="button" data-question="Give me a scrambled eggs recipe">Scrambled eggs <span>&#8599;</span></button>
+            <button type="button" data-question="Give me a pancakes recipe">Pancakes <span>&#8599;</span></button>
+            <button type="button" data-question="Give me a tomato pasta recipe">Tomato pasta <span>&#8599;</span></button>
+            <button type="button" data-question="Give me a chicken curry recipe">Chicken curry <span>&#8599;</span></button>
+          </div>
+        </section>
+
+        <section class="quiz-panel" id="quiz-panel" hidden aria-labelledby="quiz-title">
+          <div class="quiz-header"><p id="quiz-title" class="eyebrow">QUICK QUIZ</p><span id="quiz-score">SCORE 0 / 0</span></div>
+          <p id="quiz-question"></p>
+          <div class="quiz-options" id="quiz-options"></div>
+          <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+        </section>
+        <button class="quiz-toggle" id="quiz-toggle" type="button">Start a quick quiz <span>&#8594;</span></button>
+
+        <form class="composer" id="chat-form">
+          <label class="sr-only" for="user-input">Ask Orbit a question</label>
+          <input id="user-input" autocomplete="off" placeholder="Ask a question about cooking..." maxlength="280" />
+          <button class="voice-button" id="voice-input" type="button" aria-label="Speak a question" title="Speak a question">MIC</button>
+          <button class="send-button" type="submit" aria-label="Send message" title="Send message">&#8593;</button>
+        </form>
+        <p class="input-hint">PRESS ENTER TO SEND</p>
+      </section>
+
+      <aside class="facts-panel" id="facts">
+        <div class="status"><span></span> ONLINE NOW</div>
+        <section class="fact-of-day">
+          <p class="eyebrow">DID YOU KNOW?</p>
+          <p class="fact-text" id="fact-text">Salt enhances sweetness and helps balance bitter flavors.</p>
+        <button class="text-button" id="next-fact" type="button">Next fact <span>&#8594;</span></button>
+        </section>
+        <section class="coverage" id="about">
+          <p class="eyebrow">I CAN HELP WITH</p>
+          <ul>
+            <li><span></span>Recipes &amp; meal ideas</li>
+            <li><span></span>Cooking techniques</li>
+            <li><span></span>Ingredient substitutes</li>
+            <li><span></span>Food safety</li>
+          </ul>
+        </section>
+        <p class="system-label">SYSTEM STATUS <strong>READY</strong></p>
+      </aside>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
